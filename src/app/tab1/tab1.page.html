@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <h2 [hidden]="ishidden">{{location}}</h2>
+        <h2>{{connection}}</h2>
+     </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let datas of data">
+      <ion-col>
+        <span> Current Weather: </span>
+        <span class="weatherType"> {{datas.description}} </span>
+      </ion-col>
+      <ion-col>
+        <img src='{{ "https://openweathermap.org/img/w/" + datas.icon + ".png" }}' alt="">   
+      </ion-col>
+    </ion-row>  
+      
+    <ion-row>
+      <ion-col>
+        <h2 class="ion-text-center temperature">{{main}}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="arrow-right"> Humidity -  <span>{{humidity}}</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>   
+      <ion-col>
+        <p class="arrow-right"> Min Temp -  <span>{{pressure}}</span></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>  
+      <ion-col>
+        <p class="arrow-right"> Pressure -  <span>{{wind}}</span></p>
+      </ion-col>
+    </ion-row>
+   
+  </ion-grid>
+
+
+</ion-content>
